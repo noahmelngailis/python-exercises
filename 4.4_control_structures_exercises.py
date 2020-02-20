@@ -65,12 +65,168 @@ for n in range(1,10):
 
 #2ci
 prompt = input("Pick an odd number between 1 and 50")
-for prompt in range(1,50):
-    if not(prompt % 2 == 1 and prompt < 50 and prompt > 0):
-        break
-    else:
-        print(prompt)
+prompt = int(prompt)
+i = 1
+if prompt % 2 == 1 and prompt < 50 and prompt > 0:
+    while i < prompt:
+        print(f'Here is an odd number {str(i)}')
+        i += 2
+    print(f'Yikes! Skipping number: {str(prompt)}')
+    i += 2
+    while i < 50:
+        print(f'Here is an odd number {str(i)}')
+        i += 2
+else:
+    print("No good")       
 
 #2d
+prompt2 = input("Enter a natural number ")
+prompt2 = int(prompt2)
+i = 0
+while i <= prompt2:
+    print(i)
+    i += 1
+prompt4 = input("Enter a natural number ")
+prompt4 = int(prompt4)
+for i in range(0,prompt4+1):
+    print(i)
+
+#2e
+prompt3 = input("Enter a natural number ")
+prompt3 = int(prompt3)
+while  prompt3 > 0:
+    print(prompt3)
+    prompt3 -= 1
+
+prompt5 = input("Enter a natural number ")
+prompt5 = int(prompt5)
+for i in range(1,prompt5+1):
+    print(prompt5)
+    prompt5 -= 1
+
+#3 FizzBuzz
+i = 1
+while i <= 100:
+    if i % 3 == 0 and i % 5 != 0:
+        print("Fizz")
+    elif i % 5 == 0 and i % 3 != 0:
+        print('Buzz')
+    elif i % 3 == 0 and i % 5 == 0:
+        print('FizzBuzz')
+    else:
+        print(i)
+    i += 1
+
+for i in range(1,101):
+    if i % 3 == 0 and i % 5 != 0:
+        print("Fizz")
+    elif i % 5 == 0 and i % 3 != 0:
+        print('Buzz')
+    elif i % 3 == 0 and i % 5 == 0:
+        print('FizzBuzz')
+    else:
+        print(i)
+#4
+question = 'yes'
+while question.lower() == 'yes':
+    prompt6 = input("Enter an integer")
+    prompt6 = int(prompt6)
+    print("number|squared|cubed")
+    for i in range(1, prompt6+1):
+        print(str(i) + "  |  " + str(i**2) + "  |  " + str(i**3))
+    question = input('Would you like to continue? ')
 
 
+
+#5
+grade = input("Supply a numerical grade from 0-100 ")
+grade = int(grade)
+if grade >= 88:
+    print("A")
+elif grade >= 80:
+    print("B") 
+elif grade >= 67:
+    print("C")
+elif grade >= 60:
+    print("D")
+else:
+    print("F")   
+question = input("Would you like to continue?")
+while question.lower() == 'yes':
+    grade = input("Supply a numerical grade from 0-100 ")
+    grade = int(grade)
+    if grade >= 88:
+        print("A")
+    elif grade >= 80:
+        print("B") 
+    elif grade >= 67:
+        print("C")
+    elif grade >= 60:
+        print("D")
+    else:
+        print("F")   
+    question = input("Would you like to continue?")
+
+question = 'yes'
+while question.lower() == 'yes':
+    grade = input("Supply a numerical grade from 0-100 ")
+    grade = int(grade)
+    if grade >= 88:
+        print("A")
+    elif grade >= 80:
+        print("B") 
+    elif grade >= 67:
+        print("C")
+    elif grade >= 60:
+        print("D")
+    else:
+        print("F")   
+    question = input("Would you like to continue?")   
+
+books = [
+    {
+        "title": "Red Harvest",
+        "author": "Dashiell Hammett",
+        "genre": "Noir"
+    },
+    {
+        "title": "The Long Goodbye",
+        "author": "Philip Marlowe",
+        "genre": "Noir"
+    },
+    {
+        "title": "Curtain",
+        "author": "Agatha Christie",
+        "genre": "Mystery"
+    },
+    {
+        "title": "The Hardly Boys",
+        "author": "Yvonne King",
+        "genre": "Mystery"
+    },
+    {
+        "title": "Who Stole My Shoe",
+        "author": "Ryan McCall",
+        "genre": "Mystery"
+    },
+    {
+        "title": "How I Learned to Love Roof Rabbits",
+        "author": "Shay Altshue",
+        "genre": "How to"
+    },
+    {
+        "title": "Stuck in an Elevator: My First Day at CodeUp",
+        "author": "Ryan McCall",
+        "genre": "How to"
+    }
+]
+
+for book in books:
+    print(book['title'] +", by " + book['author'] + ", in genre: " + book['genre'])
+
+call = input('Pick a genre: "Noir" "Mystery" or "How to"')
+for book in books:
+    if call.lower() == book['genre'].lower():
+        print(book['title'] + " by " + book['author'])
+    
+    
