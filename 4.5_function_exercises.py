@@ -73,16 +73,20 @@ def get_letter_grade():
 #9
 def remove_vowels(words):
     for letter in words:
+        letter = letter.lower()
         if is_vowel(letter) == True:
-            
+            words = words.replace(letter,"")   
         else:
-            print(letter)
+            continue
+    return(words)
        
-        
-
-def remove_vowels(words):
-    is_vowel(letter)
-    [letter.replace(y,"") for letter in words if is_vowel(letter) == True]
-    return words 
-
 #10
+def normalize_name(string):
+    string = string.lower()
+    for char in string:
+        if char.upper() == True:
+            stirng = string.replace(char,"-")
+    return string
+
+#11
+def cumsum
