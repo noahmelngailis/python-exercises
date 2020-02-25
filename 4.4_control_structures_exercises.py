@@ -13,6 +13,12 @@ if (weekend_day.capitalize() == "Saturday" or
 else:
     print(f"Get back to work, it's only {weekend_day.capitalize()}")
 
+weekend_day = input('Please enter day of the week ')
+if weekend_day.capitalize() in ["Saturday" "Sunday"]:
+    print(f"{weekend_day.capitalize()} is a weekend day")
+else:
+    print(f"Get back to work, it's only {weekend_day.capitalize()}")
+
 #1c
 work_hours = input("How many hours did you work this week?")
 hourly_rate = 25
@@ -23,6 +29,9 @@ if work_hours <= 40:
 else:
     paycheck = 40 * hourly_rate + (work_hours - 40) * 1.5 * hourly_rate
     print(paycheck)
+
+
+
 
 #2a
 i = 5
@@ -59,6 +68,12 @@ number = [n*7 for n in range(1,11)]
 for n in range(1,11):
     print(n*7)
 
+number = int(input("Please enter an integer"))
+i = 1
+while i <= 10:
+    print(f"{number} x {1} = {number * i}")
+    i += 1
+
 #2bii
 for n in range(1,10):
     print(str(n) * n)
@@ -77,7 +92,26 @@ if prompt % 2 == 1 and prompt < 50 and prompt > 0:
         print(f'Here is an odd number {str(i)}')
         i += 2
 else:
-    print("No good")       
+    print("No good")
+    prompt = input("Pick an odd number between 1 and 50")    
+
+user_choice = input("Input an odd integer between 1 and 50")
+while (user_choice.isdigit() == False
+    or int(user_choice) < 0
+    or int(user_choice) > 50
+    or int(user_choice % 2 == 0)):
+    print(f"{user_choice} is nice, but we'll need an odd number between 1 and 50.")
+    user_choice = input("Input an odd integer between 1 and 50")  
+user_choice = int(user_choice)
+for i in range(1, 50):
+    if i % 2 == 0:
+        continue
+    if i == user_choice:
+        print(f"skipping {i}")
+        continue
+
+    print(f"{i} is an odd number")
+
 
 #2d
 prompt2 = input("Enter a natural number ")
@@ -117,13 +151,15 @@ while i <= 100:
         print(i)
     i += 1
 
+
+
 for i in range(1,101):
-    if i % 3 == 0 and i % 5 != 0:
-        print("Fizz")
-    elif i % 5 == 0 and i % 3 != 0:
-        print('Buzz')
-    elif i % 3 == 0 and i % 5 == 0:
+    if i % 3 == 0 and i % 5 == 0:
         print('FizzBuzz')
+    if i % 3 == 0:
+        print("Fizz")
+    elif i % 5 == 0:
+        print('Buzz')
     else:
         print(i)
 #4
@@ -228,5 +264,4 @@ call = input('Pick a genre: "Noir" "Mystery" or "How to"')
 for book in books:
     if call.lower() == book['genre'].lower():
         print(book['title'] + " by " + book['author'])
-    
-    
+

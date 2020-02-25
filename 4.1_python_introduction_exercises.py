@@ -1,4 +1,5 @@
-def four(message):
-    message = "Hello World"
-    return message
-    
+message = 'hello, Curie!'
+
+print(message)
+
+

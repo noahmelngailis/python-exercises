@@ -37,6 +37,12 @@ f_d_s = [flat['age'] for flat in flatten_data_sci]
 sum(f_d_s)/len(f_d_s)
 # What is most frequent coffee preference for data science students?
 cof_dat = [student['coffee_preference'] for student in students if student['course'] == 'data science']
+i = 0
+for dat in cof_dat:
+    dat == 'dark'
+    
+
+
 # What is the least frequent coffee preference for web development students?
 # What is the average grade for students with at least 2 pets?
 # How many students have 3 pets?

@@ -13,23 +13,40 @@ employers = [
 weekly = [work['hourly'] * work['time'] for work in employers]
 sum(weekly)
 
-students = [
-    {'class_full': True, 'no_schedule_conflict': True, 'enrolled' = True}
-    {'class_full': True, 'no_schedule_conflict': False, 'enrolled' = True}
-    {'class_full': False, 'no_schedule_conflict': False, 'enrolled' = True}
-    {'class_full': False, 'no_schedule_conflict': True, 'enrolled' = True}
-    ]
 
-[student for student in students if 'class_full' == True and 'no_schedule_conflict' == True]
+# My attempt with libraries
+# 
+# students = [
+#     {'class_full': True, 'no_schedule_conflict': True, 'enrolled' = True}
+#     {'class_full': True, 'no_schedule_conflict': False, 'enrolled' = True}
+#     {'class_full': False, 'no_schedule_conflict': False, 'enrolled' = True}
+#     {'class_full': False, 'no_schedule_conflict': True, 'enrolled' = True}
+#     ]
+
+# [student for student in students if 'class_full' == True and 'no_schedule_conflict' == True]
+
+class_has_room = True
+schedule_works = True
+
+student_can_be_enrolled = class_has_room and schedule_works
 
 
-def discount_offer(premium, not_expired, multiple):
-    if premium == True: 
-        return True
-    elif not_expired == True and multiple == True:
-        return True
-    else:
-        return False
+
+# def discount_offer(premium, not_expired, multiple):
+#     if premium == True: 
+#         return True
+#     elif not_expired == True and multiple == True:
+#         return True
+#     else:
+#         return False
+
+bought_multiples = False
+offer_valid = True
+premium_member = True
+
+offer_can_be_applied = offer_valid and (bought_multiples or premium_member)
+
+
 
 login_creds = dict(username='codeup', password='notastrongpassword' )
 
