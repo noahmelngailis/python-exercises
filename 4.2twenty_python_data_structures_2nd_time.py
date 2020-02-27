@@ -67,11 +67,72 @@ min([s['coffee_preference'] for s in students if s['course'] == 'web development
 avg_grade_2_pets = [sum(s['grades'])/len(s['grades']) for s in students if len(s['pets']) >= 2]
 sum(avg_grade_2_pets)/len(avg_grade_2_pets)
 # How many students have 3 pets?
-
+[len(student['pets']) for student in students if len(student['pets']) >= 3]
 # What is the average grade for students with 0 pets?
+no_pets_grades = [student['grades'] for student in students if len(student['pets']) == 0]
+avg_no_pets_grades = [sum(grades)/len(grades) for grades in no_pets_grades] 
+sum(avg_no_pets_grades)/len(avg_no_pets_grades)
 # What is the average grade for web development students? data science students?
+def avg_grade(key, item):
+    ind_avg = []
+    for student in students:
+        if key == item:
+            ind_avg += [sum(student['grades'])/len(student['grades'])]
+        else:
+            continue
+    group_avg = sum(ind_avg)/len(ind_avg)
+    return group_avg
+
+avg_grade('student["course"]', 'web development')
+avg_grade("student['course']", 'data science') 
+
 # What is the average grade range (i.e. highest grade - lowest grade) for dark coffee drinkers?
+dark_drinkers = [student['grades'] for student in students if student['coffee_preference'] == 'dark']
+avg_for_dark = [sum(d)/len(d) for d in dark_drinkers]
+avg_list_dark = []
+for d in dark_drinkers:
+    mean = sum(d)/len(d)
+    avg_list_dark.append(mean)
+max(avg_for_dark)
+min(avg_for_dark)
 # What is the average number of pets for medium coffee drinkers?
+def avg_pets_medium():
+    no_med_drinkers = len([student for student in students if student['coffee_preference'] == 'medium'])
+    medium_drinkers = [student['pets'] for student in students if student['coffee_preference'] == 'medium']
+    flat_med = sum(medium_drinkers,[])
+    avg_pets = len(flat_med)/no_med_drinkers
+    return avg_pets
 # What is the most common type of pet for web development students?
+def common_pets():
+    web_dev = [student['pets'] for student in students if student['course'] == 'web development']
+    flat_pets = sum(web_dev,[])
+    horse = 0
+    dog = 0
+    cat = 0
+    for l in flat_pets:
+        if l['species'] == 'horse':
+            horse +=1
+        if l['species'] == 'dog':
+            dog += 1
+        if l['species'] == 'cat':
+            cat += 1
+    return f"Horse: {horse}, Dog: {dog}, Cat: {cat}"
+
+web_dev = []
+    for student in students:
+        if student['course'] == 'web devolopment':
+            pets += student['pets']
+            web_dev.append(pets)
+    return web_dev
 # What is the average name length?
+def avg_name_length():
+    names = [len(student['student']) for student in students]
+    avg_name_length = sum(names)/len(names)
+    return avg_name_length
+
 # What is the highest pet age for light coffee drinkers?
+
+def highest_pet_age():
+    pets = [student['pets'] for student in students if student['coffee_preference'] == 'light']
+    flat_pets = sum(pets,[])
+    max_age = max([p['age'] for p in flat_pets])
